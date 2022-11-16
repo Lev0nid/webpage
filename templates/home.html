@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="static/js/jquery-3.3.1.slim.min.js" defer></script>
+
+    <script src="static/js/popper.min.js" async></script>
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
+    <title>Личная страничка</title>
+    <script src="static/js/bootstrap.min.js" defer></script>
+
+    <style>
+        .featurette-heading {
+            letter-spacing: -0.05rem;
+        }
+
+        @media (min-width: 40em) {
+            .featurette-heading {
+                font-size: 50px;
+            }
+        }
+
+        @media (min-width: 62em) {
+            .featurette-heading {
+                margin-top: 7rem;
+            }
+        }
+    </style>
+    
+
+</head>
+<body>
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(91179149, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/91179149" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">О страничке</h4>
+                    <p class="text-muted">Это личная страничка Егора Денисова.</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white">Контакты</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a
+                                    href="https://t.me/Lev0nid"
+                                    target="_blank"
+                                    class="text-white"
+                            >Напишите мне в Telegram</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                    href="https://github.com/Lev0nid"
+                                    target="_blank"
+                                    class="text-white"
+                            >Посмотрите на мой аккаунт GitHub</a
+                            >
+                        </li>
+                        <li>
+                            <a href="mailto: st086887@student.spbu.ru" class="text-white"
+                            >Напишите мне на Email</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <h4 class="text-white">Личная страничка!</h4>
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarHeader"
+                    aria-controls="navbarHeader"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="row featurette" style="margin-top: 1rem !important">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1">Обо мне.</h2>
+                <p class="lead">
+                    Меня зовут Денисов Егор Александрович, но друзья зовут меня Леня.
+                    Мне 18 лет. Я приехал из Екатеринбурга. Я учусь на 2 курсе ПИ СПбГУ.
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img src="static/images/me.jpg" class="img-fluid" alt="Моя фотока"/>
+            </div>
+        </div>
+
+        <hr class="featurette-divider"/>
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading fw-normal lh-1">
+                    Мои проекты.
+                    <span class="text-muted">Точнее единственный существующий.</span>
+                </h2>
+                <p class="lead">
+                    На первом курсе вместе с одногруппником мы делали анализатор
+                    графов. Я реализовывал для этого приложения "Louvain Algorithm".
+                </p>
+                <a href="https://github.com/IlyaMuravjov/graph-analyzer">Ссылка на репозиторий.</a>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img src="static/images/graph.png" class="img-fluid" alt="Граф из приложения"/>
+            </div>
+        </div>
+
+        <hr class="featurette-divider"/>
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1">
+                    Ещё немного обо мне.
+                    <span class="text-muted">Чем я увлекаюсь.</span>
+                </h2>
+                <p class="lead">
+                    В свободное время я люблю играть в D&D с друзьями. Мой любимый
+                    музыкант - это Девид Боуи. Мои любимые аниме - это JoJo's Bizarre
+                    Adventure (меня даже один раз нарисовали как персонажа оттуда) и Evangelion. Мои любимые видеоигры - это Stellaris, Cultist Simulator и
+                    Mass Effect.
+                </p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img src="static/images/anime.jpg" class="img-fluid" alt="Аниме Я"/>
+            </div>
+        </div>
+
+        <hr class="featurette-divider"/>
+    </div>
+
+    <footer class="container">
+        <p class="float-end"><a href="{{ url_for('guestbook') }}">Оставьте отзыв!</a></p>
+        <p>Создано Егором Денисовым.</p>
+    </footer>
+</main>
+</body>
+</html>

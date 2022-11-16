@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="static/js/jquery-3.3.1.slim.min.js" defer></script>
+
+    <script src="static/js/popper.min.js" async></script>
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
+    <title>Гостевая книга</title>
+    <script src="static/js/bootstrap.min.js" defer></script>
+
+    <style>
+        .featurette-heading {
+            letter-spacing: -0.05rem;
+        }
+
+        @media (min-width: 40em) {
+            .featurette-heading {
+                font-size: 50px;
+            }
+        }
+
+        @media (min-width: 62em) {
+            .featurette-heading {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">О страничке</h4>
+                    <p class="text-muted">Это личная страничка Егора Денисова.</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white">Контакты</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a
+                                    href="https://t.me/Lev0nid"
+                                    target="_blank"
+                                    class="text-white"
+                            >Напишите мне в Telegram</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                    href="https://github.com/Lev0nid"
+                                    target="_blank"
+                                    class="text-white"
+                            >Посмотрите на мой аккаунт GitHub</a
+                            >
+                        </li>
+                        <li>
+                            <a href="mailto: st086887@student.spbu.ru" class="text-white"
+                            >Напишите мне на Email</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <h4 class="text-white">Гостевая книга!</h4>
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarHeader"
+                    aria-controls="navbarHeader"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+<main>
+    <form method="post" action="/adminremove">
+        <div class="col-md-10 col-lg-11" style="margin-left: 2rem; margin-top: 1rem !important">
+            <select class="form-control" id="name" name="name">
+                {% for r in result[::-1] %}
+                <option value="{{ r[0] }}">{{ r[0] }}</option>
+                {% endfor %}
+            </select>
+            <select class="form-control" id="comment" name="comment">
+                {% for r in result[::-1] %}
+                <option value="{{ r[1] }}">{{ r[1] }}</option>
+                {% endfor %}
+            </select>
+            <div class="mb-3">
+                <label for="name">password</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">убить отзыв!</button>
+        </div>
+    </form>
+    {% for r in result[::-1] %}
+    <hr class="featurette-divider"/>
+    <div class="row featurette" style="margin-left: 2rem">
+        <div class="col-md-12 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1">
+                {{ r[0] }}
+            </h2>
+            <p class="lead">
+                {{ r[1] }}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</main>
+</body>
+</html>
