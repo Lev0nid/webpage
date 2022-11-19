@@ -1,15 +1,15 @@
 from flask import Flask, render_template, request, redirect
 import sqlite3
 
-application = Flask(__name__)
+app = Flask(__name__)
 
 
-@application.route('/')
+@app.route('/')
 def home():
     return render_template('home.html')
 
 
-@application.route('/admin')
+@app.route('/admin')
 def admin():
     conn = sqlite3.connect('comments.db')
     cursor = conn.cursor()
@@ -20,7 +20,7 @@ def admin():
     return render_template('admin.html', result=result)
 
 
-@application.route('/adminremove', methods=['GET', 'POST'])
+@app.route('/adminremove', methods=['GET', 'POST'])
 def adminremove():
     name = request.form['name']
     comment = request.form['comment']
@@ -34,7 +34,7 @@ def adminremove():
     return redirect('/admin')
 
 
-@application.route('/guestbook', methods=['GET', 'POST'])
+@app.route('/guestbook', methods=['GET', 'POST'])
 def guestbook():
     conn = sqlite3.connect('comments.db')
     cursor = conn.cursor()
@@ -45,7 +45,7 @@ def guestbook():
     return render_template('guestbook.html', result=result)
 
 
-@application.route('/process', methods=['POST'])
+@app.route('/process', methods=['POST'])
 def process():
     name = request.form['name']
     comment = request.form['comment']
@@ -58,4 +58,4 @@ def process():
 
 
 if __name__ == '__main__':
-    application.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)
